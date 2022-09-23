@@ -27,7 +27,7 @@ public class HotelService {
      * Valida que el nombre del hotel no esté repetido y que el número de estrellas este entre 1 y 5.
      */
     @Transactional
-    public HotelEntity createRestaurante(HotelEntity hotelEntity) throws IllegalOperationException {
+    public HotelEntity createHotel(HotelEntity hotelEntity) throws IllegalOperationException {
         log.info("Inicia proceso de creación del hotel");
 
         if(!hotelRepository.findByNombre(hotelEntity.getNombre()).isEmpty())
@@ -48,6 +48,7 @@ public class HotelService {
         return hotelRepository.save(hotelEntity);
 
     }
+
 
 
 }
